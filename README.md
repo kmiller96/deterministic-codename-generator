@@ -40,3 +40,7 @@ this via fastapi's development server:
 ```bash
 uv run fastapi dev
 ```
+
+## TODO
+
+- [ ] Deploy this on to my public server as a public prototype.
