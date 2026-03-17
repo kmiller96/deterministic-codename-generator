@@ -42,6 +42,16 @@ def test_get_root_returns_html_response():
 
     assert response.status_code == 200
     assert response.headers["content-type"].startswith("text/html")
+    assert 'rel="icon" href="/favicon.ico"' in response.text
+
+
+def test_get_favicon_returns_icon_response():
+    """Verify GET /favicon.ico serves the uploaded favicon."""
+    response = client.get("/favicon.ico")
+
+    assert response.status_code == 200
+    assert response.headers["content-type"].startswith("image/x-icon")
+    assert len(response.content) > 0
 
 
 def test_form_post_returns_generated_codename():

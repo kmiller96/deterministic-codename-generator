@@ -4,6 +4,7 @@ from typing import Annotated
 
 from fastapi import FastAPI, Form, Request, status
 from fastapi.exceptions import RequestValidationError
+from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 
@@ -99,6 +100,12 @@ async def handle_validation_error(request: Request, exc: RequestValidationError)
 async def index(request: Request):
     """Returns the HTML file."""
     return _render_html_template(request=request)
+
+
+@app.get("/favicon.ico", include_in_schema=False)
+async def favicon():
+    """Serves the application favicon from the app directory."""
+    return FileResponse(BASE_DIR / "favicon.ico")
 
 
 @app.post("/")

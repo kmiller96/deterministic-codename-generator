@@ -219,7 +219,7 @@ button:hover {
 }
 
 #container::before {
-  content: "SECURE TERMINAL // CODENAME OPS";
+  content: "SECURE TERMINAL v1013.115";
   position: absolute;
   top: 10px;
   right: 14px;
