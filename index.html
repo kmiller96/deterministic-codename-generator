@@ -9,40 +9,41 @@
 </head>
 
 <body>
-    <div id="container">
+    <main id="container" class="panel">
         <div class="help-row">
             <span class="help-indicator" tabindex="0" aria-label="Help">
                 ?
-                <span class="help-tooltip">
-                    Enter an input string and the system will deterministically assign a repeatable operational codename.<br />
-                    Output format: <code>Commonwealth Bank</code><br />
+                <span class="help-tooltip panel panel--floating text-body">
+                    Enter an input string and the system will deterministically assign a repeatable operational
+                    codename.<br />
                     The same normalized input will always produce the same codename.
                 </span>
             </span>
         </div>
 
-        <div id="header">
-            <h1>Deterministic Codenames Generator</h1>
-            <p>Field issue identity console</p>
-        </div>
+        <header id="header">
+            <h1 class="page-title">Deterministic Codenames Generator</h1>
+            <p class="eyebrow">Field issue identity console</p>
+        </header>
 
-        <form method="POST">
-            <label for="input_text">Source Identifier</label>
+        <form method="POST" class="stack-md">
+            <label for="input_text" class="field-label">Source Identifier</label>
             <div class="input-row">
-                <input type="text" id="input_text" name="input_text" placeholder="Enter target name, handle, or reference..." value="{{ input_text }}" />
+                <input type="text" id="input_text" name="input_text"
+                    placeholder="Enter target name, handle, or reference..." value="{{ input_text }}" />
                 <button type="submit">Generate</button>
             </div>
         </form>
 
-        {% if codename %}
-        <div class="result">
-            <p class="result-label">Assigned Codename</p>
+        {% if codename -%}
+        <section class="result panel panel--accent stack-sm" aria-labelledby="codename">
+            <p class="section-label">Assigned Codename</p>
             <span id="codename">{{ codename }}</span>
-        </div>
-        {% endif %}
+        </section>
+        {%- endif %}
 
-        <p class="status-line">Status: encrypted channel active</p>
-    </div>
+        <p class="status-line eyebrow">Status: encrypted channel active</p>
+    </main>
 </body>
 
 </html>
