@@ -29,8 +29,8 @@
         <form method="POST" class="stack-md">
             <label for="input_text" class="field-label">Source Identifier</label>
             <div class="input-row">
-                <input type="text" id="input_text" name="input_text"
-                    placeholder="Enter target name, handle, or reference..." value="{{ input_text }}" />
+                <input type="text" id="input_text" name="input_text" placeholder="Enter unencrypted identifier."
+                    autocomplete="off" value="{{ input_text }}" />
                 <div class="button-row">
                     <button type="submit">Generate</button>
                     <a href="/" class="button-link button-link--neutral" aria-label="Clear codename and input">Clear</a>
